@@ -1,0 +1,44 @@
+<p>cart works!</p
+    
+    >
+<h2>cart</h2>
+<label>name:</label>
+<input type="text"[(ngModel)]="name">
+<br>
+<label>price</label>
+<input type="number"[(ngModel)]="price">
+<br>
+<label>quantity</label>
+<input type="text"[(ngModel)]="quantity">
+<br>
+
+
+<button (click)="cart()">add to cart</button>
+
+<table class= "table table-dark">
+    <table  border="1">
+
+    </table>
+    <thead>
+        <tr>
+            <th>s.no</th>
+            <th>Name</th>
+                <th>price</th>
+                <th>quantity</th>
+                
+                
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products ;let i=index">
+            <td>{{ i }}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            
+            <td>
+                <button class="btn btn-danger"(click)="delete(i+1)">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

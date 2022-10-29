@@ -1,0 +1,23 @@
+.parent{
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    width: 70%;
+    height: 40%;
+    background-color:white ;
+   text-align: center;
+   padding: 40px;
+}
+.childa{
+
+    width:80px;
+    height:100px;
+    background-color: greenyellow;
+    align-items: center;
+    z-index:3;
+}
