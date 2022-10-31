@@ -19,7 +19,10 @@ export class CreateUserComponent implements OnInit {
         pin:new FormControl()
       }
     ),
-    cards:new FormArray([])
+    cards:new FormArray([]),
+    type:new FormControl(),
+    busfee:new FormControl(),
+    hostelfee:new FormControl()
     }
   
   ) 
