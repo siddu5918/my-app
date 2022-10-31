@@ -33,6 +33,9 @@ import { TypicodeComponent } from './typicode/typicode.component';
 import { MailComponent } from './mail/mail.component';
 import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
+
 
 
 @NgModule({
@@ -65,7 +68,10 @@ import { CreateAccountComponent } from './create-account/create-account.componen
         TypicodeComponent,
         MailComponent,
         BankDetailsComponent,
-        CreateAccountComponent
+        CreateAccountComponent,
+        CreateUserComponent,
+        FlipkartComponent,
+        
     ],
 
 
@@ -82,3 +88,4 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     bootstrap: [AppComponent]
 })
 export class AppModule { }
+ 

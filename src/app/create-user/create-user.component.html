@@ -1,0 +1,53 @@
+<p>create-user works!</p>
+ 
+<h1>create-user form</h1>
+    
+  <form [formGroup]="userForm">
+  <label>Name:</label>
+  <input type="text" formControlName="Name">
+  <br>
+  <label>phone:</label>
+  <input type="text" formControlName="phone">
+  <br>
+  <label>Dob:</label>
+  <input type="date" formControlName="dob">
+
+  <h2>address</h2>
+
+  <div formControlName="address">
+
+  <label>City:</label>
+  <input type="text" formControlName="city">
+  <br>
+
+  <label>pin:</label>
+  <input type="number" formControlName="pin">
+  <br>
+
+</div>
+
+
+<button (click)="add()">add card</button>
+
+<div formArrayName="cards">
+<div *ngFor="let card of cardsFormArray?.controls;let i=index">
+    <div formGroupName="{{i}}">
+
+        <input type="text" formControlName="name" placeholder="name">
+        <br>
+        <input type="text" formControlName="expiry" placeholder="expiry">
+        <br>
+        <input type="text" formControlName="cvv" placeholder="cvv">
+        <button class="btn btn-danger"(click)="delete(i)">delete</button>
+        <br><br>
+
+
+    </div>
+    </div>
+</div>
+ 
+<button (click)="submit()">submit</button>
+
+</form>
+     
+
