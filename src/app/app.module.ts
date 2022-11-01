@@ -35,6 +35,7 @@ import { BankDetailsComponent } from './bank-details/bank-details.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 
 
@@ -71,6 +72,7 @@ import { FlipkartComponent } from './flipkart/flipkart.component';
         CreateAccountComponent,
         CreateUserComponent,
         FlipkartComponent,
+        CreateProductComponent,
         
     ],
 

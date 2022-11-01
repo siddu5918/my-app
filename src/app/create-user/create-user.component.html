@@ -4,10 +4,22 @@
     
   <form [formGroup]="userForm">
   <label>Name:</label>
-  <input type="text" formControlName="Name">
+  <input type="text" formControlName="name">
+  <div class="error" *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+    <p *ngIf="userForm.get('name')?.errors?.['required']">this field is required</p>
+    <p *ngIf="userForm.get('name')?.errors?.['minilength']">this field is required</p>
+    <p *ngIf="userForm.get('name')?.errors?.['maxlength']">this field is required</p>
+    
+  </div>
   <br>
   <label>phone:</label>
-  <input type="text" formControlName="phone">
+   <input type="text" formControlName="phone"> 
+   <div class="error" *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+    <p *ngIf="userForm.get('phone')?.errors?.['required']">this field is required</p>
+    <p *ngIf="userForm.get('phone')?.errors?.['min']">phone no should be  min 10 digits</p>
+    <p *ngIf="userForm.get('phone')?.errors?.['max']">phone no should be max 10 digits</p>
+
+    </div>
   <br>
   <label>Dob:</label>
   <input type="date" formControlName="dob">
@@ -48,15 +60,15 @@
 <br>
 
  <label>type:</label>
- <input type="radio"name="type" formControlName="type" value="daysscholor">
-<label>day scholor:</label>
+ <input type="radio"name="type" formControlName="type" value="dayscholor">
+<label>dayscholor:</label>
 <input type="radio" name ="type" formControlName="type" value="residential">
 <label>residential</label>
 <br>
 
 
 <div *ngIf="userForm.get('type')?.value=='dayscholor'">
-<label>bus free</label>
+<label>bus fee</label>
 <input type="number" formControlName="busFee">
 <br>
 </div>
