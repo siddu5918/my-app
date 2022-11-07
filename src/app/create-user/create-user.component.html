@@ -34,10 +34,12 @@
 
   <label>pin:</label>
   <input type="number" formControlName="pin">
-  <br>
-
+  <div class="error" *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid">
+    <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">pin is required</p>
+    <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">pin should contain 6 digits </p>
+    <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">pin  should contain 6 digits</p>
 </div>
-
+<br>
 
 <button (click)="add()">add card</button>
 
@@ -50,6 +52,13 @@
         <input type="text" formControlName="expiry" placeholder="expiry">
         <br>
         <input type="text" formControlName="cvv" placeholder="cvv">
+        <div class="error" *ngIf="cardsFormArray.controls[i].get('cvv')?.touched && cardsFormArray.controls[i].get('cvv')?.invalid">
+          <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['required']">cvv is required</p>
+          <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['min']">cvv min 3 digits </p>
+          <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['max']">cvv max 3 digits </p>
+          
+        </div>
+
         <button class="btn btn-danger"(click)="delete(i)">delete</button>
         <br><br>
 
@@ -81,6 +90,6 @@
 
 <button (click)="submit()">submit</button>
 
-</form>
+
      
 

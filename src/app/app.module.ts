@@ -76,14 +76,12 @@ import { CreateProductComponent } from './create-product/create-product.componen
         
     ],
 
-
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
         ReactiveFormsModule
-    
     
     ],
     providers: [],

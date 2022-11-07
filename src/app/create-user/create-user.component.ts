@@ -35,7 +35,7 @@ export class CreateUserComponent implements OnInit {
         {
           name:new FormControl(),
           expeiry: new FormControl(),
-          cvv:new FormControl()
+          cvv:new FormControl(null,[Validators.required, Validators.min(100),Validators.max(999)])
         }
       )
     )
@@ -48,6 +48,7 @@ export class CreateUserComponent implements OnInit {
   ngOnInit(): void {
   }
 submit(){
-  console.log(this.userForm)
+  console.log(this.userForm);
+  this.userForm.markAllAsTouched();
 }
 }
